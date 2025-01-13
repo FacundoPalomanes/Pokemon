@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body {
+    background-color: #ff9800;
+}
+
+img {
+    width: 10%;
+    margin: 3%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    flex-direction: column;
+}
+
+.text_input {
+    width: 50%;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 100px;
+    border-color: transparent;
+    padding-left: 30px;
+    outline:  none;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 2%;
+}
+
+.card {
+    background-color: #f8f9fa; /* Color suave */
+    width: 250px; /* Ajusta según el tamaño deseado */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.card .card-content {
+    padding: 15px;
+}
+
+.card .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card .card-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.card .card-footer {
+    background-color: #895129;
+    color: #fff;
+    padding: 10px;
+    font-size: 0.8rem;
+    border-top: 2px solid #ddd;
+}
+
+#error_text {
+    margin-top: 2%;
+}
+
+.page-button {
+    cursor: pointer;
+    width: 50px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #000;
+    color: #fff;
+    transition: all 300ms;
+    margin: 0 5px;
+}
+
+.page-button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.center_buttons {
+    display: flex; 
+    justify-content: center; 
+    gap: 10px; 
+    height: 5vh;
+    margin: 2vh; 
+    width: 100%; 
+}
+
+.unbutton {
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    background-color: transparent;
+    border: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s ease-in-out;
+    z-index: 1000;
+}
+
+.modal-card {
+    background-color: #f8f9fa;
+    width: 110%;
+    max-width: 25%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+.modal-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.modal-card .card-content {
+    padding: 15px;
+}
+
+.modal-card .card-title {
+    font-size: 1.8rem; 
+    font-weight: bold;
+}
+
+.modal-card .card-text {
+    font-size: 1rem;
+    color: #555;
+    flex: 1; 
+    text-align: center; 
+}
+
+.modal-card .card-text {
+    display: inline;
+    justify-content: space-between;
+    margin: 4%;
+    text-align: center;
+}
+
+.modal-card .card-footer {
+    background-color: #895129;
+    color: #fff;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-top: 2px solid #ddd;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #895129;
+}
+
+.modal-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.modal-card .card-text-group {
+    display: flex; 
+}
+
+
+@media screen and (max-width: 1440px) {
+    img {
+        width: 15%;
+    }
+    .modal-card {
+        width: 100%;
+        max-width: 35%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    img {
+        width: 30%;
+    }
+    .modal-card {
+        width: 100%;
+        max-width: 65%;
+    }
+    .text_input {
+        width: 100%;
+    }
+    .center_buttons {
+        gap: 2px;
+        margin: 0;
+    }    
+}
