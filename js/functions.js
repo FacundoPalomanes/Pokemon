@@ -73,13 +73,22 @@ async function renderAllCards(offset) {
 
   let pages = document.getElementById("pages");
 
-  // Generar todos los botones dentro de un solo contenedor
   pages.innerHTML = `
     <div class="center_buttons">
       ${Array.from({ length: Math.ceil(data.count / 300) }, (_, index) => {
         const pageNumber = index;
-        return `<a href="#return"><button class="page-button" onclick="renderAllCards(${pageNumber * 300})">${pageNumber + 1}</button><a/>`;}).join("")}</div>`;
+        return `<button class="page-button" onclick="renderAllCards(${pageNumber * 300})">${pageNumber + 1}</button>`;
+      }).join("")}
+    </div>`;
+
+  
+  const returnElement = document.getElementById("return");
+  returnElement.scrollIntoView({
+    behavior: "smooth", 
+    block: "center",    
+  });
 }
+
 
 async function fetchCard(id) {
   const getPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
